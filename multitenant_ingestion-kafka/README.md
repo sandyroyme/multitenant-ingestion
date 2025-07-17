@@ -59,6 +59,8 @@ Before setting up the project, ensure you have the following installed:
 
 ## 🔧 Installation & Setup
 
+### 0. Download the ZIP
+
 ### 1. Unzip the source folder
 
 ```bash
@@ -99,9 +101,6 @@ KAFKA_TOPIC=file_uploaded
 KAFKA_FAILURE_TOPIC=file_failed
 ```
 
-###5. Database Setup
-
-
 # Create Database
 create a new DB 
 create user with password
@@ -134,9 +133,9 @@ Ensure Kafka service is available up and running
 python manage.py runserver
 ```
 
-The application will be available at `http://localhost:80
+The application will be available at `http://localhost:80000`
 
-### 2the Kafka Consumer Service
+### 7. The Kafka Consumer Service
 
 In a separate terminal: This is a custom Django command created 
 
@@ -199,7 +198,7 @@ http://127.0.0.1:8000/api/records/?tenant_id=mmmm&device_id=201
 ]
 ```
 
-### Web Interface
+## 🔌 Web Interface
 
 #### GET `/upload/`
 File upload interface with form-based upload.
@@ -259,7 +258,7 @@ multitenant_ingestion/
 └── README.md                    # This file
 ```
 
-## 🔄 Data Flow1. **File Upload**: User uploads CSV file via web interface
+## 🔄 Data Flow. **File Upload**: User uploads CSV file via web interface
 2. **S3 Storage**: File is uploaded to AWS S3 with tenant-specific path
 3. **Kafka Event**: File upload event is sent to Kafka topic
 4. **Background Processing**: Kafka consumer processes the file asynchronously
