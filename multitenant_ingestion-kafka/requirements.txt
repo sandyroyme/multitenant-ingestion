@@ -1,0 +1,9 @@
+Django>=4.2
+djangorestframework
+boto3
+confluent-kafka
+django-environ
+psycopg2-binary
+pandas
+openpyxl
+kafka-python

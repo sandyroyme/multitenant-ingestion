@@ -1,0 +1,33 @@
+<h1>Data Records</h1>
+    <form method="get">
+        Tenant: <input name="tenant_id" value="{{ request.GET.tenant_id }}">
+        Device: <input name="device_id" value="{{ request.GET.device_id }}">
+        <button>Filter</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tenant</th>
+            <th>Device</th>
+            <th>Model</th>
+            <th>Device Type</th>
+            <th>Manufacturer</th>
+            <th>Approval Date</th>
+            <th>Created</th>
+        </tr>
+        {% for rec in records %}
+            <tr>
+                <td>{{ rec.id }}</td>
+                <td>{{ rec.tenant_id }}</td>
+                <td>{{ rec.model }}</td>
+                <td>{{ rec.device_id }}</td>
+                <td>{{ rec.device_type }}</td>
+                <td>{{ rec.manufacturer }}</td>
+                <td>{{ rec.approval_date }}</td>
+                <td>{{ rec.created_at }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="8">No data</td></tr>
+        {% endfor %}
+    </table>
+        
